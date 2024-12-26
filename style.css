@@ -1,0 +1,134 @@
+:root {
+  --white: #fff;
+
+  --grey: #808080;
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --pale-orange: hsl(33, 100%, 98%);
+  --df-size: 1.125rem;
+  --b-radius: 0.75rem;
+  /* --line-gap: 0.125rem; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: var(--df-size);
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+}
+
+.txtGap > p {
+  margin-bottom: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--soft-red);
+  padding: var(--df-size);
+  border-radius: var(--b-radius);
+  margin-bottom: 20px;
+}
+
+.balance {
+  color: var(--white);
+}
+
+main {
+  display: grid;
+  background: var(--pale-orange);
+  padding: 30px var(--df-size);
+  border-radius: var(--b-radius);
+}
+
+.bars {
+  display: grid;
+  align-items: end;
+  gap: 15px;
+  padding: 80px 0 40px 0;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 4px solid var(--cream);
+}
+
+.bar {
+  display: grid;
+  gap: 10px;
+  color: var(--grey);
+  text-align: center;
+}
+
+[data-day] {
+  position: relative;
+  /* display: inline-block; */
+  background-color: var(--soft-red);
+  border-radius: 4px;
+}
+
+[data-day]:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip {
+  position: absolute;
+  visibility: hidden;
+  color: var(--pale-orange);
+  background: #101720;
+  opacity: 0;
+  padding: 2px 5px;
+  text-wrap: nowrap;
+  /* top: -50%; */
+  left: 50%;
+  transform: translate(-50%, -140%);
+  border-radius: 4px;
+  transition: 0.5s opacity ease;
+}
+
+.maxAmount {
+  background-color: var(--cyan);
+}
+
+/* Testing visual look */
+/* [data-day="wed"] {
+  height: 150px;
+  
+} */
+
+.mTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  text-wrap: none;
+  margin-top: 40px;
+}
+
+.mEstim {
+  text-align: right;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
