@@ -84,11 +84,6 @@ main {
   border-radius: 4px;
 }
 
-[data-day]:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-
 .tooltip {
   position: absolute;
   visibility: hidden;
@@ -96,12 +91,15 @@ main {
   background: #101720;
   opacity: 0;
   padding: 2px 5px;
-  text-wrap: nowrap;
-  /* top: -50%; */
   left: 50%;
   transform: translate(-50%, -140%);
   border-radius: 4px;
-  transition: 0.5s opacity ease;
+  transition: opacity 0.2s ease-in, visibility 0.2s ease;
+}
+
+[data-day]:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .maxAmount {
